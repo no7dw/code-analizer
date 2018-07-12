@@ -1,7 +1,7 @@
-const fs = require('fs')
-const path = require('path')
+import * as fs  from 'fs'
+import * as path from 'path'
 
-class FileUtil {
+exports class FileUtil {
   /**
    * 读取某个目录下所有文件名
    */
@@ -22,5 +22,3 @@ class FileUtil {
     return allFiles
   }
 }
-
-module.exports = FileUtil
