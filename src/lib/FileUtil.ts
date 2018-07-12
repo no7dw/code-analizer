@@ -1,7 +1,7 @@
 import * as fs  from 'fs'
 import * as path from 'path'
 
-exports class FileUtil {
+export class FileUtil {
   /**
    * 读取某个目录下所有文件名
    */
