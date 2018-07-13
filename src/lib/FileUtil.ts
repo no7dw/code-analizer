@@ -21,4 +21,7 @@ export class FileUtil {
     }
     return allFiles
   }
+  static readFile (path) {
+    return fs.readFileSync(path, 'UTF-8')
+  }
 }
