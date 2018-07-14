@@ -1,6 +1,7 @@
 export class Parser {
   result = {importState: [], classState: [], functionState: []}
-  parse(content : String) {
+  parse(contentCode : String) {
+    let content = contentCode.split('\n')
     for(let i = 0 ; i < content.length; i++){
       if(content[i].includes('import') || content[i].includes('require')) {
         this.result.importState.push(content[i])
