@@ -1,3 +1,7 @@
+//key Parser
+//parse import
+//parse function 
+//parse class
 export class Parser {
   result = {importState: [], classState: [], functionState: []}
   parse(contentCode : String) {

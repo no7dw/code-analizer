@@ -2,8 +2,14 @@
 // export class TLDR extends BaseRule {
 export class TLDR {  
   name = 'TLDR'
-  static rule(contCode : String){
-    let contLOC = contCode.split('\n').length
+  //file too long
+  static rule(FileContent : String){
+    let contLOC = FileContent.split('\n').length
+    if(contLOC>10) return true
+  }
+  //function too long
+  static rule2(FunctionContent : String){
+    let contLOC = FunctionContent.split('\n').length
     if(contLOC>10) return true
   }
 }
