@@ -3,7 +3,7 @@
 //parse function 
 //parse class
 export class Parser {
-  result = {importState: [], classState: [], functionState: []}
+  result = {importState: [], classState: [], functionState: [], query:[]}
   parse(contentCode : String) {
     let content = contentCode.split('\n')
     for(let i = 0 ; i < content.length; i++){
@@ -15,6 +15,9 @@ export class Parser {
       }
       if(content[i].includes('function') || content[i].includes('async') ) {
         this.result.classState.push(content[i])
+      }
+      if(content[i].includes('query') || content[i].includes('.find') ) {
+        this.result.query.push(content[i])
       }
     }
     return this.result
