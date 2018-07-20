@@ -1,11 +1,11 @@
 import {expect} from 'chai'
-import {FileUtil} from '../src/lib/FileUtil'
-import {Parser} from '../src/lib/Parser'
+import {FileUtil} from 'src/lib/FileUtil'
+import {Parser} from 'src/lib/Parser'
 
 //should autowire
-import { TLDR } from '../src/rule/TLDR'
-import { ImportsAnalyst } from '../src/rule/ImportsAnalyst'
-import { TestCase } from '../src/rule/TestCase'
+import { TLDR } from 'src/rule/TLDR'
+import { ImportsAnalyst } from 'src/rule/ImportsAnalyst'
+import { TestCase } from 'src/rule/TestCase'
 
 // import * as _ from '_@types_lodash@4.14.112@@types/lodash'
 

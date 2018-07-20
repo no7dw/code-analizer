@@ -1,4 +1,4 @@
-const keyResult = require('../lib/mono.data.json')
+const keyResult = require('../db/mongo.data.json')
 export class MongoKeyScan {
   static getKey () {
     return keyResult
