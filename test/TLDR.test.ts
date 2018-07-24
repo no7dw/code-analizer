@@ -6,6 +6,7 @@ import {Parser} from 'src/lib/Parser'
 import { TLDR } from 'src/rule/TLDR'
 import { ImportsAnalyst } from 'src/rule/ImportsAnalyst'
 import { TestCase } from 'src/rule/TestCase'
+import { QueryIndex } from 'src/rule/QueryIndex'
 
 // import * as _ from '_@types_lodash@4.14.112@@types/lodash'
 
@@ -24,8 +25,12 @@ describe('rule', ()=> {
     // expect(TLDR.rule(contCode)).to.be.true
     // expect(ImportsAnalyst.rule(parseResult.importState)).to.be.true
   })
-  it.only('should return true in testcase', () => {
+  it('should return true in testcase', () => {
     expect(TestCase.rule()).to.be.true
+  })
+  it.only('should return not hit warning', () =>{
+    let tempQuery =[ 'xx.findxx("username")', 'yy.findyy(_id)' , 'yy.update(item)']
+    expect(QueryIndex.rule(tempQuery).length.greater(0))
   })
 })
 

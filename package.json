@@ -1,19 +1,23 @@
 {
-    "main": "index.js",
-    "scripts": {
-        "start": "node build/app.js",
-        "build": "./node_modules/.bin/tsc -p ./",
-        "tslint": "./node_modules/.bin/tslint -c tslint.json 'src/**/*.ts' --fix",
-        "cov": "istanbul cover _mocha -- -t 5000  --recursive test",
-        "test": "cd build && NODE_ENV=test mocha --exit -R spec -t 5000 --r intelli-espower-loader --recursive test",
-        "pretest": "npm run build"
-    },
-    "dependencies": {
-        "@types/lodash": "^4.14.112",
-        "@types/node": "^10.5.2"
-    },
-    "devDependencies": {
-        "@types/chai": "^4.1.4",
-        "@types/mocha": "^5.2.4"
-    }
+  "main": "index.js",
+  "scripts": {
+    "start": "node build/app.js",
+    "checkcpd": "cd src && jscpd --path ./* --languages typescript -o report",
+    "checkinsp":"cd build && jsinspect -t 50 ./*",
+    "build": "./node_modules/.bin/tsc -p ./",
+    "tslint": "./node_modules/.bin/tslint -c tslint.json 'src/**/*.ts' --fix",
+    "cov": "istanbul cover _mocha -- -t 5000  --recursive test",
+    "test": "cd build && NODE_ENV=test mocha --exit -R spec -t 5000 --r intelli-espower-loader --recursive test",
+    "pretest": "npm run build"
+  },
+  "dependencies": {
+    "@types/lodash": "^4.14.112",
+    "@types/node": "^10.5.2",
+    "jscpd": "^0.6.20",
+    "jsinspect": "^0.12.7"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.1.4",
+    "@types/mocha": "^5.2.4"
+  }
 }
